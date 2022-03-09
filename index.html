@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+    <link rel="stylesheet" href="alura.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">
+          Conversor de moedas
+        </h1>
+        <p class="page-subtitle">
+          Descubra os valores em euros R$
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+        
+        <label for="moeda">Coloque o valor </label><br>
+        <input type="number" id="valor" size="2" /><br>
+
+        <button class="real" type="submit" onclick="Converter()">Converter</button>
+
+        <h2 id="valorConvertido"></h2>
+      </div>
+
+    
+      
+ 
+<script>
+  function Converter() {
+	  var valorElemento = document.getElementById("valor")
+	  var valor = valorElemento.value;
+	  var valorEmDolarNumerico = parseFloat(valor);
+	
+ 	  var valorEmReal = valorEmDolarNumerico * 7.5;
+	  console.log(valorEmReal);
+	
+	  var elementoValorConvertido = document.getElementById("valorConvertido")
+	  var valorConvertido = "O resultado em euros é R$ " + valorEmReal
+	  elementoValorConvertido.innerHTML = valorConvertido;
+    }
+    </script>
+    
+</body>
+</html>
